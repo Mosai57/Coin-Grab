@@ -14,14 +14,6 @@ int main(){
  int psel                    =   0;
  int csel                    =   0;
  int i                       =   0;
- int current_round           =   0;
-
- /*Assuming the maximum amount of turns it
-   would take to end the game is 15 */
- int player_selections[15]   = {0};
- int computer_selections[15] = {0};
- int totals[15]              = {0};
-
 
  printf("Welcome to Coin Grabber.\n");
  printf("To play, take either 1, 2, or 3 coins from the stack,\n");
@@ -64,10 +56,6 @@ int main(){
   } else{
    printf("The computer takes %d coins, there are %d coins left.\n", csel, coins);
   }
-
-  player_selections[current_round] = psel;
-  computer_selections[current_round] = csel;
-  totals[current_round] = coins;
   current_round++;
  }
 
@@ -86,7 +74,7 @@ int gen_random_num(int coins){
 }
 
 void print_coins(int coins, int i){
- printf("Remaining coins (%d): ", coins);
+ printf("\nRemaining coins (%d): ", coins);
  for(i = 0; i < coins; i++){
   printf("o");
  }
