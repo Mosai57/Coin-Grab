@@ -56,7 +56,6 @@ int main(){
   } else{
    printf("The computer takes %d coins, there are %d coins left.\n", csel, coins);
   }
-  current_round++;
  }
 
  return 0;
@@ -67,6 +66,8 @@ int gen_random_num(int coins){
  
  // prevent the computer from taking more coins than there are left 
  if(r > coins){
+  r = coins;
+ } else if(coins <= 3){
   r = coins;
  }
 
