@@ -61,10 +61,14 @@ int main(){
  return 0;
 }
 
+
+//Selects the computer's Choice between 1, 2, or 3
 int gen_random_num(int coins){
  int r = (rand() % 3) + 1; //r will be either 1, 2, or 3
  
- // prevent the computer from taking more coins than there are left 
+ // prevent the computer from taking more coins than there are left
+ // or makes the CPU take the remaining coins if the remaining is
+ // less than or equal to 3, to simulate a human decision. 
  if(r > coins){
   r = coins;
  } else if(coins <= 3){
@@ -74,6 +78,8 @@ int gen_random_num(int coins){
  return r;
 }
 
+
+//Prints the remaining coins in a decimal, and ascii format
 void print_coins(int coins, int i){
  printf("\nRemaining coins (%d): ", coins);
  for(i = 0; i < coins; i++){
